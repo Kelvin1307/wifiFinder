@@ -15,7 +15,7 @@ export default function Home() {
       setUserLocation([lat, lng]);
 
       const res = await fetch(
-        `http://localhost:5000/nearby-wifi?lat=${lat}&lng=${lng}`
+        `${process.env.NEXT_PUBLIC_API_URL}/nearby-wifi?lat=${lat}&lng=${lng}`
       );
 
       const data = await res.json();
